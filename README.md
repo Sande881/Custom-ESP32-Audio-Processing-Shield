@@ -72,6 +72,13 @@ Rough:
 
 ### 3.1) Resources:
 
+ Date        | Links           | Notes  |
+| ------------- |:-------------:| -----:|
+|             |  |  |
+|     |     |   |
+|  |       |     |
+
+
 ### 3.2) Key Decisions & Changes:
 
 ### 3.3) Issues & Solutions:
