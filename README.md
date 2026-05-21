@@ -13,60 +13,60 @@ This project aims to design, fabricate, and validate a high-fidelity, mixed-sign
 * A fully operational Python-based pyserial host validation engine that executes swept-frequency test sequences, captures physical output data, and automatically renders empirical Bode plots to verify design targets.
 
 ### 1.3) Key Features
-*Dynamic Audio Path Routing: Features a dual-pathway input topology leveraging a physical SPDT slide switch or a CD4051 analog multiplexer to route low-voltage audio interchangeables between an external ES8311 I2S Codec and the internal 12-bit SAR ADC of the ESP32.
+* Dynamic Audio Path Routing: Features a dual-pathway input topology leveraging a physical SPDT slide switch or a CD4051 analog multiplexer to route low-voltage audio interchangeables between an external ES8311 I2S Codec and the internal 12-bit SAR ADC of the ESP32.
 
-*Non-Intrusive Hardware Debugging: Includes inline 2-pin current shunt headers on both sub-power networks for real-time power draw profiling, alongside an unpopulated 6-pin diagnostic header array breaking out critical I2S and I2C lines.
+* Non-Intrusive Hardware Debugging: Includes inline 2-pin current shunt headers on both sub-power networks for real-time power draw profiling, alongside an unpopulated 6-pin diagnostic header array breaking out critical I2S and I2C lines.
 
-*Maximum Signal Integrity: Achieves optimal electrical isolation by physically splitting the PCB layout into a high-frequency digital left quadrant (MCU, USB-UART, Buck switcher) and a low-noise analog right quadrant (Codec, active op-amps, audio I/O).
+* Maximum Signal Integrity: Achieves optimal electrical isolation by physically splitting the PCB layout into a high-frequency digital left quadrant (MCU, USB-UART, Buck switcher) and a low-noise analog right quadrant (Codec, active op-amps, audio I/O).
 
-*Strict Return-Path Routing: Restricts high-speed digital audio lines directly over a continuous, unbroken Layer 2 solid ground plane while strictly prohibiting any analog traces from crossing digital return paths.
+* Strict Return-Path Routing: Restricts high-speed digital audio lines directly over a continuous, unbroken Layer 2 solid ground plane while strictly prohibiting any analog traces from crossing digital return paths.
 
 ## 2.) Requirements
 ### 2.1) Hardware
-*Microcontroller: ESP32-S3
+⋅⋅⋅⋅* Microcontroller: ESP32-S3
 
-*Low Power Mono Audio CODEC: ES8311
+⋅⋅⋅⋅* Low Power Mono Audio CODEC: ES8311
 
-*Analog Mutiplexer: CD4051
+⋅⋅⋅⋅* Analog Mutiplexer: CD4051
 
-*USB-TO-UART Bridge: CH343C
+⋅⋅⋅⋅* USB-TO-UART Bridge: CH343C
 
-*Synchronous Buck Regulator: AP63203
+⋅⋅⋅⋅* Synchronous Buck Regulator: AP63203
 
-*Low Dropout Regulator (LDO): AP2112K
+⋅⋅⋅⋅* Low Dropout Regulator (LDO): AP2112K
 
-*Bipolar Junction Transistors: S8050
+⋅⋅⋅⋅* Bipolar Junction Transistors: S8050
 
-*Operational Amplifiers
+⋅⋅⋅⋅* Operational Amplifiers
 
-*Resistors & Capacitors
+⋅⋅⋅⋅* Resistors & Capacitors
 
-*Inline Pins
+⋅⋅⋅⋅* Inline Pins
 
-*3.5 mm Audio Jacks
+⋅⋅⋅⋅* 3.5 mm Audio Jacks
 
-*Multimeter
+⋅⋅⋅⋅* Multimeter
 
-*Oscilloscope
+⋅⋅⋅⋅* Oscilloscope
 
-*Logic Analyzer
+⋅⋅⋅⋅* Logic Analyzer
 
-*Function Generator
+⋅⋅⋅⋅* Function Generator
 
 ### 2.2) Software & Tools
-*Simulations: MATLAB, LTSpice
-*Development: KiCAD, Native ESP-IDF (VSCode)
-*Programming: C, Python, MATLAB
-*RTOS: FreeRTOS
+* Simulations: MATLAB, LTSpice
+* Development: KiCAD, Native ESP-IDF (VSCode)
+* Programming: C, Python, MATLAB
+* RTOS: FreeRTOS
 
 ### 2.3) Constraints & Challenges
-*Finite Word-Length Effects & Quantization Noise
-*Statistical Sensitivity vs. Component Tolerances
-*Mixed-Signal Isolation on a High-Density PCB
-*Real-time audio processing requires balancing latency against processing safety.
-*CPU Core Inter-Dependency and Priority Inversion
+* Finite Word-Length Effects & Quantization Noise
+* Statistical Sensitivity vs. Component Tolerances
+* Mixed-Signal Isolation on a High-Density PCB
+* Real-time audio processing requires balancing latency against processing safety.
+* CPU Core Inter-Dependency and Priority Inversion
 
-## 3.) Development Log
+## 3.) Development Log (Ongoing Update)
 
 Rough:
 
@@ -74,7 +74,7 @@ Rough:
 
 ### 3.2) Key Decisions & Changes:
 
-### 3.3) Issues & Solutions
+### 3.3) Issues & Solutions:
 
 ## 4.) Development Process
 
