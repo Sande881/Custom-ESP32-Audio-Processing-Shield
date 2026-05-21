@@ -5,4 +5,4 @@ This project aims to create a Audio Processing Shield with an ESP32-S3. It shall
 prototyping phase, focusing on mathematical modeling, 4-layer PCB layout, and bare-metal validation. This shall act as a multi-disciplinary project, tying in PCB Design, Embedded Programming and Digital Signal Processing.
 
 ### 1.2) Goals & Objectives
-     * Test
+* Test
