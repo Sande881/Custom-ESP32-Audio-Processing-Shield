@@ -23,35 +23,35 @@ This project aims to design, fabricate, and validate a high-fidelity, mixed-sign
 
 ## 2.) Requirements
 ### 2.1) Hardware
-⋅⋅⋅⋅* Microcontroller: ESP32-S3
+* Microcontroller: ESP32-S3
 
-⋅⋅⋅⋅* Low Power Mono Audio CODEC: ES8311
+* Low Power Mono Audio CODEC: ES8311
 
-⋅⋅⋅⋅* Analog Mutiplexer: CD4051
+* Analog Mutiplexer: CD4051
 
-⋅⋅⋅⋅* USB-TO-UART Bridge: CH343C
+* USB-TO-UART Bridge: CH343C
 
-⋅⋅⋅⋅* Synchronous Buck Regulator: AP63203
+* Synchronous Buck Regulator: AP63203
 
-⋅⋅⋅⋅* Low Dropout Regulator (LDO): AP2112K
+* Low Dropout Regulator (LDO): AP2112K
 
-⋅⋅⋅⋅* Bipolar Junction Transistors: S8050
+* Bipolar Junction Transistors: S8050
 
-⋅⋅⋅⋅* Operational Amplifiers
+* Operational Amplifiers
 
-⋅⋅⋅⋅* Resistors & Capacitors
+* Resistors & Capacitors
 
-⋅⋅⋅⋅* Inline Pins
+* Inline Pins
 
-⋅⋅⋅⋅* 3.5 mm Audio Jacks
+* 3.5 mm Audio Jacks
 
-⋅⋅⋅⋅* Multimeter
+* Multimeter
 
-⋅⋅⋅⋅* Oscilloscope
+* Oscilloscope
 
-⋅⋅⋅⋅* Logic Analyzer
+* Logic Analyzer
 
-⋅⋅⋅⋅* Function Generator
+* Function Generator
 
 ### 2.2) Software & Tools
 * Simulations: MATLAB, LTSpice
