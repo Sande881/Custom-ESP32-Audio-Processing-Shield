@@ -71,15 +71,17 @@ This project aims to design, fabricate, and validate a high-fidelity, mixed-sign
 Rough:
 26/05/26 7:50 PM- I studied how to work with matplotlib and scipy.signal, will read more on how to use it for butterworth and IIR filters, to implement the final IIR filter.
 
-26/05/26
+27/05/26 2:02 AM- I studied more about how to work with scipy.signal amd learned about signal resampling, spectral analysis using FFTs, Savitzky-Golay Filtering, and Wavelet Analysis. Spectral Analysis should particularly help us in understanding leakages, and perhaps I could work with resampling to figure out an improvement in audio processing accuracy, but that may not help also. I also read a bit about IIR Filter and Real-Time Processing implementation in the IIR Filter article, and a bit about Butterworth response. I will do more work, and I shall have a complete design of a 3-band parametric equalizer by the end of this week, alongside the Radix-4 FFT Pipeline and Anti-Aliasing Filter implemented in LTSpice (or other relevant software).
 
 ### 3.1) Resources:
 
  Date        | Links           | Notes  |
 | ------------- |:-------------:| -----:|
-|    26/05/25         | https://pythonguides.com/scipy-signal/ | Learnt the usage and basics of scipy.signal |
-|     |     |   |
-|  |       |     |
+|    26/05/26         | https://pythonguides.com/scipy-signal/ | Learnt the usage and basics of scipy.signal |
+|   26/05/26  |  https://pythonguides.com/python-scipy-iir-filter/   | Learnt the implementation of IIR filters in scipy.signal   |
+| 26/05/26 |  https://pythonguides.com/python-scipy-butterworth-filter/     |  Learnt the implementation of Buterworth Response   |
+| 26/05/26  | https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html      | IIR Biquad Filter Design for Equalizer   |
+
 
 
 ### 3.2) Key Decisions & Changes:
