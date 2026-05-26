@@ -70,6 +70,7 @@ This project aims to design, fabricate, and validate a high-fidelity, mixed-sign
 
 Rough:
 26/05/26 7:50 PM- I studied how to work with matplotlib and scipy.signal, will read more on how to use it for butterworth and IIR filters, to implement the final IIR filter.
+
 26/05/26
 
 ### 3.1) Resources:
