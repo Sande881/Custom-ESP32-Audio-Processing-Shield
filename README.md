@@ -68,7 +68,8 @@ This project aims to design, fabricate, and validate a high-fidelity, mixed-sign
 
 ## 3.) Development Log (Ongoing Update)
 
-Rough:
+Rough Work:
+
 26/05/26 7:50 PM- I studied how to work with matplotlib and scipy.signal, will read more on how to use it for butterworth and IIR filters, to implement the final IIR filter.
 
 27/05/26 2:02 AM- I studied more about how to work with scipy.signal amd learned about signal resampling, spectral analysis using FFTs, Savitzky-Golay Filtering, and Wavelet Analysis. Spectral Analysis should particularly help us in understanding leakages, and perhaps I could work with resampling to figure out an improvement in audio processing accuracy, but that may not help also. I also read a bit about IIR Filter and Real-Time Processing implementation in the IIR Filter article, and a bit about Butterworth response. I will do more work, and I shall have a complete design of a 3-band parametric equalizer by the end of this week, alongside the Radix-4 FFT Pipeline and Anti-Aliasing Filter implemented in LTSpice (or other relevant software).
