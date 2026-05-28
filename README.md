@@ -74,6 +74,8 @@ Rough Work:
 
 27/05/26 2:02 AM- I studied more about how to work with scipy.signal amd learned about signal resampling, spectral analysis using FFTs, Savitzky-Golay Filtering, and Wavelet Analysis. Spectral Analysis should particularly help us in understanding leakages, and perhaps I could work with resampling to figure out an improvement in audio processing accuracy, but that may not help also. I also read a bit about IIR Filter and Real-Time Processing implementation in the IIR Filter article, and a bit about Butterworth response. I will do more work, and I shall have a complete design of a 3-band parametric equalizer by the end of this week, alongside the Radix-4 FFT Pipeline and Anti-Aliasing Filter implemented in LTSpice (or other relevant software).
 
+28/05/26 1:50 PM - Begun finalizing paramteric coefficients for IIR Biquad Filter, will make the final IIR filter very soon.
+
 ### 3.1) Resources:
 
  Date        | Links           | Notes  |
@@ -89,6 +91,12 @@ Rough Work:
 
 ### 3.3) Issues & Solutions:
 
+For the 3-Band Paramteric Equalizer code in python, the code does not run the graph plotting required. The code taken from the website does not have plt.show(), which I have added to get the final plot. 
+
 ## 4.) Development Process
 
 ### Week 1: ALGORITHM MODELING & SIMULATION
+
+Algorithm modeling and simulations are very important to ensure that our design decisions are feasible and will give us our desired results. For this project, we must first model a 3-Band Parametric Equalizer using Direct Form I  IIR Biquad Filters.
+
+IIR Filters are a type of 
