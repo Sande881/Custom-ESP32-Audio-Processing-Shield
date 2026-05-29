@@ -76,6 +76,8 @@ Rough Work:
 
 28/05/26 1:50 PM - Begun finalizing paramteric coefficients for IIR Biquad Filter, will make the final IIR filter very soon.
 
+29/05/26 4:12 PM - 3-Band EQ Successfully completed, now the FFT and Anti-Aliasing Filter remain.
+
 ### 3.1) Resources:
 
  Date        | Links           | Notes  |
@@ -90,8 +92,6 @@ Rough Work:
 ### 3.2) Key Decisions & Changes:
 
 ### 3.3) Issues & Solutions:
-
-For the 3-Band Paramteric Equalizer code in python, the code does not run the graph plotting required. The code taken from the website does not have plt.show(), which I have added to get the final plot. 
 
 ## 4.) Development Process
 
