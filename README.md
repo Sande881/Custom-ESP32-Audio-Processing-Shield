@@ -4,7 +4,7 @@
 This project aims to design, fabricate, and validate a high-fidelity, mixed-signal hardware-in-the-loop (HIL) audio processing board utilizing the ESP32-S3 microcontroller. The system will serve as a high-performance, real-time digital signal processing (DSP) platform capable of executing custom 3-band parametric equalization via optimized, native firmware architectures on an custom 4-layer printed circuit board (PCB).
 
 ### 1.2) Objectives
-* Mathematically model and Simulate a 3-band parametric equalizer using Direct Form I IIR biquad filters in Python, a 512-sample Radix-4 FFT pipeline simulation and a 2nd-order Sallen-Key low-pass anti-aliasing filter.
+* Mathematically model and Simulate a 3-band parametric equalizer using Direct Form I IIR biquad filters in Python, a 512-sample Radix-2 FFT simulation and a 2nd-order Sallen-Key low-pass anti-aliasing filter.
   
 * Design and fabrication of an EMI-optimized 4-layer PCB utilizing an integrated power tree and an explicit single-point star ground layout.
   
@@ -78,6 +78,8 @@ Rough Work:
 
 29/05/26 4:12 PM - 3-Band EQ Successfully completed, now the FFT and Anti-Aliasing Filter remain.
 
+30/05/26 1:17 AM - FFT Complete, will complete Anti-Aliasing Filter soon.
+
 ### 3.1) Resources:
 
  Date        | Links           | Notes  |
@@ -92,6 +94,8 @@ Rough Work:
 
 
 ### 3.2) Key Decisions & Changes:
+
+I will be changing the FFT Pipeline from Radix-4 to Radix-2, due to it already having a in-built library for the ESP32. Radix-4 will also require us to use Radix-4 Butterfly sequences with a Radix-2 Butterfly at the end, given that we are taking samples of 512.
 
 ### 3.3) Issues & Solutions:
 
