@@ -86,6 +86,8 @@ Rough Work:
 |   26/05/26  |  https://pythonguides.com/python-scipy-iir-filter/   | Learnt the implementation of IIR filters in scipy.signal   |
 | 26/05/26 |  https://pythonguides.com/python-scipy-butterworth-filter/     |  Learnt the implementation of Buterworth Response   |
 | 26/05/26  | https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html      | IIR Biquad Filter Design for Equalizer   |
+| 26/05/26    |     https://www.status.co/blogs/the-journal/explaining-the-audio-frequency-spectrum-bass-mids-and-treble         |  Basic primer on Bass, Mids and Trebble   |     
+
 
 
 
@@ -97,6 +99,14 @@ Rough Work:
 
 ### Week 1: ALGORITHM MODELING & SIMULATION
 
-Algorithm modeling and simulations are very important to ensure that our design decisions are feasible and will give us our desired results. For this project, we must first model a 3-Band Parametric Equalizer using Direct Form I  IIR Biquad Filters.
+Algorithm modeling and simulations are very important to ensure that our design decisions are feasible and will give us our desired results. For this project, we must first model a 3-Band Parametric Equalizer using Direct Form I IIR Biquad Filters. We use this cookbook https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html as a reference to model our EQ.
 
-IIR Filters are a type of 
+IIR Filters are a type of digital filters that have sometime known as an Infinite Impulse Response (IIR), this refers to a fundamental property of a Linear Time Invariant system where the impulse response theoretically continues indefinitely. We use IIR for the equalizer for a few major reasons:
+
+* Presence of feedback loops will provide us with required computational efficiency and low-latency, which will require FIR filters to use too many coefficients to adequately match.
+  
+* IIR Filters being designed upon the principles of Analog transfer functions allows it to mimic the exact changes in audio in the digital domain.
+
+A 3-Band Parametric Equalizer serves the purpose of 
+
+
