@@ -1,0 +1,104 @@
+import numpy as np
+from scipy import signal 
+import matplotlib.pyplot as plt
+from scipy.fft import rfft, rfftfreq
+
+# This would typically read from a file
+f_s = 44000
+duration = 3
+t = np.linspace(0, duration, int(f_s * duration), endpoint=False)
+
+# Create a synthetic audio signal with multiple frequencies
+audio =( (0.5 * np.sin(2 * np.pi * 100 * t)) +  #Bass
+         (0.3 * np.sin(2 * np.pi * 1000 * t)) + #Mids
+         (0.2 * np.sin(2 * np.pi * 5000 * t)) ) #Trebble  
+ 
+f_s = 44100
+bcentre_freq = 90
+mcentre_freq = 1300
+tcentre_freq = 9000
+qb = 1
+qm = 0.707
+qt = 1
+dBgain = 6
+
+#Filter Definition for each band
+def range_filter(centre_freq, Q):
+ omega = 2 * np.pi * (centre_freq / f_s)
+ alpha = np.sin(omega) / (2 * Q)
+ A = 10 ** (dBgain / 40)
+ #Coefficients 
+ b = [1 + (alpha * A), -2 * np.cos(omega), 1 - (alpha * A)]
+ a = [1 + (alpha / A), -2 * np.cos(omega), 1 - (alpha / A)]
+
+ #Normalized Coefficients
+ b_n = np.array(b) / a[0]
+ a_n = np.array(a) / a[0]
+ return b_n, a_n
+
+#3-Band Equalizer Filter
+b_b, a_b = range_filter(bcentre_freq, qb)
+b_m, a_m = range_filter(mcentre_freq, qm)
+b_t, a_t = range_filter(tcentre_freq, qt)
+
+bass_filter = signal.lfilter(b_b, a_b, audio)
+mids_filter = signal.lfilter(b_m, a_m, bass_filter)
+final_filter = signal.lfilter(b_t, a_t, mids_filter)
+
+#Frequency Spectrum 
+window = np.hanning(len(audio))
+fft_original = np.abs(rfft(audio * window))
+fft_filtered = np.abs(rfft(final_filter * window))
+fft_frequencies = rfftfreq(len(audio), 1/f_s)
+
+#Compute Transfer Function Response (Bode Plot)
+w_b, h_b = signal.freqz(b_b, a_b, worN=8192)
+w_m, h_m = signal.freqz(b_m, a_m, worN=8192)
+w_t, h_t = signal.freqz(b_t, a_t, worN=8192)
+
+#Convert angular frequencies to physical Hz
+freq_axis = w_b * f_s / (2 * np.pi)
+
+#Cascade the transfer functions by multiplying the complex responses together
+h_total = h_b * h_m * h_t
+total_magnitude_db = 20 * np.log10(np.abs(h_total))
+phase = np.degrees(np.unwrap(np.angle(h_total)))
+
+#Plotting
+plt.figure(figsize=(12, 8))
+
+plt.subplot(3, 1, 1)
+plt.plot(freq_axis, total_magnitude_db, label="EQ Curve", color="black", linewidth=2.5)
+plt.axhline(dBgain, color="green", linestyle=":", alpha=0.5, label=f"Target Gain (+{dBgain}dB)")
+plt.xscale('log')
+plt.xlim(20, 20000)
+plt.ylim(-2, 10)
+plt.ylabel('System Gain (dB)', fontsize=11)
+plt.title('3-Band Parametric EQ System Response', fontsize=13, fontweight='bold')
+plt.grid(True, which="both", linestyle="--", alpha=0.5)
+plt.legend()
+
+#Phase Response
+plt.subplot(3, 1, 2)
+plt.plot(freq_axis, phase, color='purple', linewidth=2)
+plt.axvline(bcentre_freq, color='red', linestyle='--', alpha=0.7)
+plt.axvline(mcentre_freq, color='red', linestyle='--', alpha=0.7)
+plt.axvline(tcentre_freq, color='red', linestyle='--', alpha=0.7)
+plt.xlabel('Frequency (Hz)', fontsize=12)
+plt.ylabel('Phase (Degrees)', fontsize=12)
+plt.grid(True, which="both", linestyle="--", alpha=0.5)
+
+#FFT Spectral Distribution
+plt.subplot(3, 1, 3)
+plt.plot(fft_frequencies, 20 * np.log10(fft_original + 1e-5), label="Original Input", color="red", alpha=0.7)
+plt.plot(fft_frequencies, 20 * np.log10(fft_filtered + 1e-5), label="Processed Output", color="blue", alpha=0.8)
+plt.xscale('log')
+plt.xlim(20, 20000)
+plt.xlabel('Frequency (Hz)', fontsize=11)
+plt.ylabel('Signal Magnitude (dB)', fontsize=11)
+plt.title(' FFT Spectral Distribution', fontsize=13, fontweight='bold')
+plt.grid(True, which="both", linestyle="--", alpha=0.5)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
