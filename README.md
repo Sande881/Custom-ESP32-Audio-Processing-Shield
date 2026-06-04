@@ -80,6 +80,8 @@ Rough Work:
 
 30/05/26 1:17 AM - FFT Complete, will complete Anti-Aliasing Filter soon.
 
+4/06/25 
+
 ### 3.1) Resources:
 
  Date        | Links           | Notes  |
@@ -97,7 +99,12 @@ Rough Work:
 
 I will be changing the FFT Pipeline from Radix-4 to Radix-2, due to it already having a in-built library for the ESP32. Radix-4 will also require us to use Radix-4 Butterfly sequences with a Radix-2 Butterfly at the end, given that we are taking samples of 512.
 
-### 3.3) Issues & Solutions:
+Switching Analog Multiplexer
+
+### 3.3) Issues & Solutions: 
+Issue 1: Theoretical calculated values for Sallen-Key Filter equations do not yield the corner frequency at exactly 20 kHz in the 1000-run Monte Carlo Simulation, instead the corner frequency begins at 13 kHz.
+
+Solution 1: Taking the design equations at a higher frequency (25 or 30kHz) yields us a set of values that bring the -3 dB crossover to 16 kHz. With the help of statistical analysis, we can plot the probability distribution of the frequency variations caused by component tolerances, to further fine tune the component values to bring it to a near perfect crossover. 
 
 ## 4.) Development Process
 
