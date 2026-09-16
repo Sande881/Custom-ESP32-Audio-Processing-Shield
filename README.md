@@ -118,6 +118,4 @@ IIR Filters are a type of digital filters that have sometime known as an Infinit
   
 * IIR Filters being designed upon the principles of Analog transfer functions allows it to mimic the exact changes in audio in the digital domain.
 
-A 3-Band Parametric Equalizer serves the purpose of 
-
-
+NOTE: I will restart work on this project at a later time period, when convenient.
